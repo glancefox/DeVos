@@ -7,4 +7,5 @@ int main(int argc, char *argv[])
 	DeVos w;
 	w.show();
 	return a.exec();
+
 }
