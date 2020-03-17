@@ -12,7 +12,8 @@
 #include <assert.h>
 
 //#include <afx.h>
-using namespace  std;
+
+//using namespace  std;
 
 
 class CMatrix
