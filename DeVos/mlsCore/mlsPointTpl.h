@@ -243,8 +243,22 @@ public:
 		this->z /= scalar;
 		return *this;
 	}
-	//Dot production;
-
+	//Dot product;
+	inline Type dot(const Point3DTPl& pt)const
+	{
+		return this->x*pt.x + this->y*pt.y + this->z*pt.z;
+	}
+	//Cross product;
+	inline Point3DTpl cross(const Point3DTpl& pt)const
+	{
+		return Point3DTpl(this->y*pt.z - this->z*pt.y, this->z*pt.x - this->x*pt.z, this->x*pt.y - this->y*pt.x);
+	}
+	//Vector square norm;
+	inline  Type norm2() const
+	{
+		return x*x + y*y + z*z;
+	}
+	//
 	
 	//Addition operator for two 3D points;
 	inline Point3DTpl operator +(const Point3DTpl& pt) const
