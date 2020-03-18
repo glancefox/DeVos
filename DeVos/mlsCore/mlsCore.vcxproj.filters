@@ -21,5 +21,8 @@
     <ClInclude Include="mlsPointTpl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="mlsSquareMatrix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
