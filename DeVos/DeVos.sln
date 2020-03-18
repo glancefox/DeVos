@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LASlib", "..\3rdParty\LASli
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Matrix", "..\3rdParty\Matrix\Matrix.vcxproj", "{6F6F2176-D49F-4D56-AC30-D869A614584A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mlsCore", "mlsCore\mlsCore.vcxproj", "{8D463809-042C-4E20-9B08-3E6C65A2C859}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -39,6 +41,14 @@ Global
 		{6F6F2176-D49F-4D56-AC30-D869A614584A}.Release|x64.Build.0 = Release|x64
 		{6F6F2176-D49F-4D56-AC30-D869A614584A}.Release|x86.ActiveCfg = Release|Win32
 		{6F6F2176-D49F-4D56-AC30-D869A614584A}.Release|x86.Build.0 = Release|Win32
+		{8D463809-042C-4E20-9B08-3E6C65A2C859}.Debug|x64.ActiveCfg = Debug|x64
+		{8D463809-042C-4E20-9B08-3E6C65A2C859}.Debug|x64.Build.0 = Debug|x64
+		{8D463809-042C-4E20-9B08-3E6C65A2C859}.Debug|x86.ActiveCfg = Debug|Win32
+		{8D463809-042C-4E20-9B08-3E6C65A2C859}.Debug|x86.Build.0 = Debug|Win32
+		{8D463809-042C-4E20-9B08-3E6C65A2C859}.Release|x64.ActiveCfg = Release|x64
+		{8D463809-042C-4E20-9B08-3E6C65A2C859}.Release|x64.Build.0 = Release|x64
+		{8D463809-042C-4E20-9B08-3E6C65A2C859}.Release|x86.ActiveCfg = Release|Win32
+		{8D463809-042C-4E20-9B08-3E6C65A2C859}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
