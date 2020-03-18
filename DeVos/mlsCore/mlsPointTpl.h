@@ -258,8 +258,37 @@ public:
 	{
 		return x*x + y*y + z*z;
 	}
-	//
-	
+	//! Returns vector square norm (forces double precision output)
+	inline double norm2d() const 
+	{ 
+		return static_cast<double>(x)*x + static_cast<double>(y)*y + static_cast<double>(z)*z; 
+	}
+	//Vector norm;
+	inline Type norm() const 
+	{ 
+		return static_cast<Type>(std::sqrt(norm2d())); 
+	}
+	//Vector norm(forces double precision output)
+	inline double normd() const 
+	{ 
+		return std::sqrt(norm2d()); 
+	}
+	//Sets vector norm to unity
+	inline void normalize() 
+	{ 
+		Type n = norm(); 
+		if (n > std::numeric_limits<Type>::epsilon()) 
+			*this /= n; 
+	}
+	//! Returns a normalized vector which is orthogonal to this one
+	inline Point3DTpl orthogonal() const
+	{
+		Point3DTpl orth; 
+		vorthogonal(u, orth.u); 
+		return orth; 
+	}
+
+
 	//Addition operator for two 3D points;
 	inline Point3DTpl operator +(const Point3DTpl& pt) const
 	{
@@ -276,12 +305,140 @@ public:
 		return Point3DTpl(this->x*scalar, this->y*scalar, this->z*scalar);
 	}
 	
+	//Divide 
+	static inline void vdivide(Type p[], Type scalar) 
+	{ 
+		p[0] /= scalar;
+		p[1] /= scalar;
+		p[2] /= scalar;
+	}
+	static inline void vdivide(const Type p[], Type scalar, Type r[]) 
+	{ 
+		r[0] = p[0] / scalar;
+		r[1] = p[1] / scalar;
+		r[2] = p[2] / scalar;
+	}
+	static inline void vnormalize(Type p[]) 
+	{
+		Type n = vnorm2(p); 
+		if (n > 0) 
+			vdivide(p, std::sqrt(n)); 
+	}
+	static inline void vmultiply(const Type p[], Type scalar, Type r[]) 
+	{
+		r[0] = p[0] * scalar;
+		r[1] = p[1] * scalar;
+		r[2] = p[2] * scalar;
+	}
+	static inline void vmultiply(Type p[], Type scalar) 
+	{ 
+		p[0] *= scalar;
+		p[1] *= scalar;
+		p[2] *= scalar;
+	}
+	static inline Type vdot(const Type p[], const Type q[]) 
+	{ 
+		return (p[0] * q[0]) + (p[1] * q[1]) + (p[2] * q[2]); 
+	}
+	static inline void vcross(const Type p[], const Type q[], Type r[]) 
+	{ 
+		r[0] = (p[1] * q[2]) - (p[2] * q[1]); 
+		r[1] = (p[2] * q[0]) - (p[0] * q[2]); 
+		r[2] = (p[0] * q[1]) - (p[1] * q[0]); 
+	}
+	static inline void vcopy(const Type p[], Type q[]) 
+	{ 
+		q[0] = p[0]; 
+		q[1] = p[1]; 
+		q[2] = p[2]; 
+	}
+	static inline void vset(Type p[], Type scalar) 
+	{
+		p[0] = p[1] = p[2] = scalar;
+	}
+	static inline void vset(Type p[], Type x, Type y, Type z) 
+	{
+		p[0] = x; 
+		p[1] = y; 
+		p[2] = z; 
+	}
+	static inline void vadd(const Type p[], const Type q[], Type r[]) 
+	{
+		r[0] = p[0] + q[0]; 
+		r[1] = p[1] + q[1]; 
+		r[2] = p[2] + q[2]; 
+	}
+	// note misspelling: should be vsubtract
+	static inline void vsubstract(const Type p[], const Type q[], Type r[]) 
+	{
+		r[0] = p[0] - q[0]; 
+		r[1] = p[1] - q[1]; 
+		r[2] = p[2] - q[2]; 
+	}
+	static inline void vcombination(Type a, const Type p[], Type b, const Type q[], Type r[]) 
+	{ 
+		r[0] = (a*p[0]) + (b*q[0]); 
+		r[1] = (a*p[1]) + (b*q[1]); 
+		r[2] = (a*p[2]) + (b*q[2]); 
+	}
+	static inline void vcombination(const Type p[], Type b, const Type q[], Type r[]) 
+	{ 
+		r[0] = p[0] + (b*q[0]); 
+		r[1] = p[1] + (b*q[1]); 
+		r[2] = p[2] + (b*q[2]); 
+	}
+	static inline Type vnorm2(const Type p[])
+	{
+		return (p[0] * p[0]) + (p[1] * p[1]) + (p[2] * p[2]);
+	}
+	static inline void vnormalize(Type& p[]) 
+	{
+		Type n = vnorm2(p); 
+		if (n > 0)
+		{
+			vdivide(p, std::sqrt(n));
+		}
+	}
+	static inline Type vdistance2(const Type p[], const Type q[]) 
+	{
+		return ((p[0] - q[0])*(p[0] - q[0])) + ((p[1] - q[1])*(p[1] - q[1])) + ((p[2] - q[2])*(p[2] - q[2])); 
+	}
+	static inline Type vnorm(const Type p[]) 
+	{
+		return std::sqrt(vnorm2(p)); 
+	}
+	static inline Type vdistance(const Type p[], const Type q[]) 
+	{
+		return std::sqrt(vdistance2(p, q)); 
+	}
+	static void vorthogonal(const Type p[], Type q[])
+	{
+		if (std::abs(p[0]) <= std::abs(p[1]) && std::abs(p[0]) <= std::abs(p[2]))
+		{
+			q[0] = 0; q[1] = p[2]; q[2] = -p[1];
+		}
+		else if (std::abs(p[1]) <= std::abs(p[0]) && std::abs(p[1]) <= std::abs(p[2]))
+		{
+			q[0] = -p[2]; q[1] = 0; q[2] = p[0];
+		}
+		else
+		{
+			q[0] = p[1]; q[1] = -p[0]; q[2] = 0;
+		}
+		vnormalize(q);
+	}
+	static Type vangle_rad(const Type p[], const Type q[])
+	{
+		Type productNorm = vnorm(p) * vnorm(q);
+		if (productNorm < std::numeric_limits<Type>::epsilon())
+		{
+			return std::numeric_limits<Type>::quiet_NaN();
+		}
 
-
-
+		Type cosAngle = vdot(p, q) / productNorm;
+		return acos(std::max(std::min(cosAngle, static_cast<Type>(1.0)), static_cast<Type>(-1.0)));
+	}
 };
-
-
 
 
 #endif // !MLS_POINTTPL_H
