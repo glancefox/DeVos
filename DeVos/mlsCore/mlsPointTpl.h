@@ -3,6 +3,7 @@
 #ifndef MLS_POINTTPL_H
 #define MLS_POINTTPL_H
 
+#include"mlsDataTypes.h"
 
 #include<math.h>
 #include<limits>
@@ -441,6 +442,13 @@ namespace mlsCore
 			return acos(std::max(std::min(cosAngle, static_cast<Type>(1.0)), static_cast<Type>(-1.0)));
 		}
 	};
+
+	using Point3Df = Point3DTpl<PointTypeF>;
+
+	
+
+
+
 
 }//namepace mls
 

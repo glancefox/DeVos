@@ -719,7 +719,7 @@ namespace mlsCore
 		Type	*m_pData = nullptr;
 	};
 
-
+	using SquareMatrix = SquareMatrixTpl<float>;
 
 }// namespace mlsCore
 

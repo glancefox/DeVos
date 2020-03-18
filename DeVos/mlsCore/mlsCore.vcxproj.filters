@@ -24,5 +24,16 @@
     <ClInclude Include="mlsSquareMatrix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="mlsBoundingBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mlsDataTypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="mlsBoundingBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

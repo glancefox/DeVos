@@ -130,8 +130,13 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="mlsBoundingBox.h" />
+    <ClInclude Include="mlsDataTypes.h" />
     <ClInclude Include="mlsPointTpl.h" />
     <ClInclude Include="mlsSquareMatrix.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="mlsBoundingBox.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
