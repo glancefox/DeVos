@@ -121,7 +121,7 @@ public:
 	}
 };
 
-
+//This is the code from CloudCompare library.
 template <class Type> class Tuple3Tpl
 {
 public:
