@@ -64,7 +64,7 @@ namespace mlsCore
 		//! Returns maximal box dimension
 		PointTypeF getMaxBoxDim() const;
 		//! Returns the bounding-box volume
-		double computeVolume() const;
+		double computeVolume() const; 
 
 		//! Sets bonding box validity
 		inline void setValidity(bool state) { m_valid = state; }
