@@ -21,7 +21,7 @@ namespace mlsCore
 		BoundingBox(const Point3Df& minCorner, const Point3Df& maxCorner);
 
 		//! Returns the 'sum' of this bounding-box and another one
-		BoundingBox operator + (const BoundingBox& aBBox) const;
+		BoundingBox operator + (const BoundingBox& aBBox) const; 
 		//! In place 'sum' of this bounding-box with another one
 		const BoundingBox& operator += (const BoundingBox& aBBox);
 		//! Shifts the bounding box with a vector
