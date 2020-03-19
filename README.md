@@ -1,2 +1,3 @@
 # DeVos
-A tool for mobile laser scanning point cloud data processing and visualization.
+
+A toolbox for Mobile Laser Scanning point cloud data processing and visualization.
