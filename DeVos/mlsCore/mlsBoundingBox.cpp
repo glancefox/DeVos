@@ -77,7 +77,7 @@ BoundingBox BoundingBox::operator + (const BoundingBox& aBBox) const
 		tempBox.m_bbMax.z = std::max(m_bbMax.z, aBBox.m_bbMax.z);
 		tempBox.setValidity(true);
 	}
-
+	 
 	return tempBox;
 }
 
