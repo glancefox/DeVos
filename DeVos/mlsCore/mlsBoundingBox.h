@@ -16,7 +16,7 @@ namespace mlsCore
 	public:
 
 		//! Default constructor
-		BoundingBox();
+		BoundingBox(); 
 		//! Constructor from two vectors (lower min. and upper max. corners)
 		BoundingBox(const Point3Df& minCorner, const Point3Df& maxCorner);
 
