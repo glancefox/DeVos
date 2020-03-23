@@ -95,7 +95,7 @@ namespace mlsCore
 		//! Validity
 		bool m_valid;
 	};
-
+	 
 }//namespace mlsCore
 
 #endif // !MLS_BOUNDINGBOX_H
