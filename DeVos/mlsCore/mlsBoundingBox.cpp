@@ -67,18 +67,7 @@ BoundingBox BoundingBox::operator + (const BoundingBox& aBBox) const
 	if (!aBBox.isValid())
 		return *this;
 
-	BoundingBox tempBox;
-	{
-		tempBox.m_bbMin.x = std::min(m_bbMin.x, aBBox.m_bbMin.x);
-		tempBox.m_bbMin.y = std::min(m_bbMin.y, aBBox.m_bbMin.y);
-		tempBox.m_bbMin.z = std::min(m_bbMin.z, aBBox.m_bbMin.z);
-		tempBox.m_bbMax.x = std::max(m_bbMax.x, aBBox.m_bbMax.x);
-		tempBox.m_bbMax.y = std::max(m_bbMax.y, aBBox.m_bbMax.y);
-		tempBox.m_bbMax.z = std::max(m_bbMax.z, aBBox.m_bbMax.z);
-		tempBox.setValidity(true);
-	}
-	 
-	return tempBox;
+
 }
 
 const BoundingBox& BoundingBox::operator += (const BoundingBox& aBBox)
