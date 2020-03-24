@@ -247,7 +247,7 @@ namespace mlsCore
 			return *this;
 		}
 		//Dot product;
-		inline Type dot(const Point3DTPl& pt)const
+		inline Type dot(const Point3DTpl& pt)const
 		{
 			return this->x*pt.x + this->y*pt.y + this->z*pt.z;
 		}
