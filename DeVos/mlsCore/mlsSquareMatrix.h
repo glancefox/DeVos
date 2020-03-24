@@ -218,7 +218,7 @@ namespace mlsCore
 		}
 
 		//! Multiplication by a vector
-		inline CCVector3 operator * (const CCVector3& V) const
+		inline Point3Df operator * (const Point3Df& V) const
 		{
 			if (m_matrixSize == 3)
 			{
