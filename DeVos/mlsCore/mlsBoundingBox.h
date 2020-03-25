@@ -94,7 +94,7 @@ namespace mlsCore
 		Point3Df m_bbMax;
 		//! Validity
 		bool m_valid;
-	};
+	}; 
 	 
 }//namespace mlsCore
 
