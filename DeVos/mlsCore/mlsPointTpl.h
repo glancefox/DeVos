@@ -432,7 +432,7 @@ namespace mlsCore
 		}
 		static Type vangle_rad(const Type p[], const Type q[])
 		{
-			Type productNorm = vnorm(p) * vnorm(q);
+			Type productNorm = vnorm(p) * vnorm(q); 
 			if (productNorm < std::numeric_limits<Type>::epsilon())
 			{
 				return std::numeric_limits<Type>::quiet_NaN();
