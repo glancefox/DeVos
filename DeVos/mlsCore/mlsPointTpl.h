@@ -9,6 +9,7 @@
 #include<limits>
 #include<algorithm>
 
+
 namespace mlsCore
 {
 	template<typename Type> class Point2DTpl
@@ -97,7 +98,7 @@ namespace mlsCore
 		{
 			return Point2DTpl(this->x + pt.x, this->y + pt.y);
 		}
-		//Substraction operator£»
+		//Substraction operatorÂ£Â»
 		inline Point2DTpl operator-(const Point2DTpl& pt) const
 		{
 			return Point2DTpl(this->x - pt.x, this->y - pt.y);
