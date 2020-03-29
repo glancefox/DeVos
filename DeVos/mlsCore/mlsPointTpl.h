@@ -14,7 +14,7 @@ namespace mlsCore
 {
 	template<typename Type> class Point2DTpl
 	{
-	public:
+	public: 
 		union
 		{
 			struct
